@@ -5,142 +5,94 @@
   <title>Happy Anniversary Mummy-Papa</title>
   <style>
     body {
-      background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad0c4);
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
       color: #333;
       padding: 50px;
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
     }
-
     h1 {
-      font-size: 3.5em;
-      color: #ff6f61;
+      font-size: 3em;
       margin-bottom: 0.5em;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
-
     p {
       font-size: 1.5em;
       margin: 20px auto;
       max-width: 600px;
-      line-height: 1.6;
-      color: #555;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-      display: none; /* Hide text initially */
     }
-
     .heart {
-      color: #ff6f61;
+      color: red;
       font-size: 3em;
-      animation: beat 1.5s infinite;
+      animation: beat 1s infinite;
     }
-
     @keyframes beat {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.3); }
+      50% { transform: scale(1.2); }
     }
-
-    .envelope {
+    /* Styling for the letter */
+    .letter {
       width: 300px;
       height: 200px;
       background-color: #f8c3b3;
+      margin: 0 auto;
+      cursor: pointer;
+      padding: 20px;
+      text-align: center;
+      border-radius: 15px;
       position: relative;
-      animation: openEnvelope 2s ease-in-out forwards;
-      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .envelope::before, .envelope::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 50%;
-      background-color: #f8c3b3;
-      top: 0;
-      left: 0;
-      border-radius: 10px;
-    }
-
-    .envelope::after {
-      top: auto;
-      bottom: 0;
-      transform-origin: bottom;
-      transform: rotateX(180deg);
-    }
-
-    .letter {
-      width: 260px;
-      height: 150px;
-      background-color: #fff;
-      margin: 20px auto;
-      padding: 15px;
-      box-sizing: border-box;
-      display: none; /* Initially hidden */
-      text-align: left;
-    }
-
-    @keyframes openEnvelope {
-      0% {
-        transform: rotateX(0deg);
-      }
-      50% {
-        transform: rotateX(-180deg);
-      }
-      100% {
-        transform: rotateX(0deg);
-      }
-    }
-
-    @keyframes showLetter {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-
-    footer {
-      margin-top: 30px;
+    .letter p {
+      display: none;
       font-size: 1.2em;
       color: #333;
     }
 
-    footer strong {
-      font-size: 1.3em;
+    .letter h1 {
+      font-size: 2.5em;
       color: #ff6f61;
     }
+
+    /* Animation for letter opening */
+    .open .letter-content {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .letter-content {
+      opacity: 0;
+      transform: translateY(-50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
   </style>
 </head>
 <body>
-  <div class="envelope">
-    <div class="letter">
-      <h1>💖 Happy Anniversary Mummy-Papa 💖</h1>
-      <p>Aap dono mere liye duniya ke sabse pyaare log ho.<br>
-         Aapke pyaar ne mujhe jeena sikhaya, muskurana sikhaya, aur har mushkil ka saamna karna sikhaya.<br>
-         Main hamesha dua karta hoon ki aap dono hamesha khush raho, saath raho, aur pyaar karte raho. ❤️</p>
+
+  <h1>💖 Happy Anniversary Mummy-Papa 💖</h1>
+
+  <!-- Letter Section -->
+  <div class="letter" onclick="openLetter()">
+    <div class="letter-content">
+      <h1>💌 Letter for You</h1>
+      <p>
+        Aap dono mere liye duniya ke sabse pyaare log ho.<br>
+        Aapke pyaar ne mujhe jeena sikhaya, muskurana sikhaya, aur har mushkil ka saamna karna sikhaya.<br>
+        Main hamesha dua karta hoon ki aap dono hamesha khush raho, saath raho, aur pyaar karte raho. ❤️
+      </p>
       <div class="heart">❤️</div>
       <p><strong>~ Tumhara pyara bachha</strong></p>
     </div>
   </div>
 
-  <footer>
-    <strong>Anniversary Special</strong>
-  </footer>
-
   <script>
-    window.onload = function() {
-      // Show letter after envelope opens
-      setTimeout(function() {
-        document.querySelector('.letter').style.display = 'block';
-        document.querySelector('.letter').style.animation = 'showLetter 2s ease-in-out forwards';
-      }, 2000); // Show after envelope opens
-    };
+    function openLetter() {
+      // When clicked, the letter content will appear with animation
+      document.querySelector('.letter').classList.add('open');
+    }
   </script>
+
 </body>
 </html>
