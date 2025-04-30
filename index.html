@@ -10,119 +10,35 @@
       text-align: center;
       color: #333;
       padding: 50px;
-      margin: 0;
     }
-
     h1 {
-      font-size: 3.5em;
-      margin-bottom: 20px;
-      color: #ff6f61;
-      font-weight: 700;
-      position: relative;
-      animation: heartbeatText 1.5s infinite;
+      font-size: 3em;
+      margin-bottom: 0.5em;
     }
-
-    /* Heartbeat animation for the text */
-    @keyframes heartbeatText {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+    p {
+      font-size: 1.5em;
+      margin: 20px auto;
+      max-width: 600px;
     }
-
     .heart {
       color: red;
-      font-size: 2em;
+      font-size: 3em;
       animation: beat 1s infinite;
     }
-
     @keyframes beat {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.2); }
     }
-
-    p {
-      font-size: 1.4em;
-      margin: 20px auto;
-      max-width: 700px;
-      line-height: 1.6;
-      color: #555;
-    }
-
-    /* Styling for the letter */
-    .letter {
-      width: 80%;
-      max-width: 400px;
-      background-color: #f8c3b3;
-      margin: 50px auto;
-      cursor: pointer;
-      padding: 30px;
-      text-align: center;
-      border-radius: 15px;
-      position: relative;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      transition: all 0.5s ease-in-out;
-    }
-
-    .letter:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .letter p {
-      display: none;
-      font-size: 1.2em;
-      color: #333;
-    }
-
-    .letter h1 {
-      font-size: 2.5em;
-      color: #ff6f61;
-    }
-
-    /* Animation for letter opening */
-    .open .letter-content {
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    .letter-content {
-      opacity: 0;
-      transform: translateY(-30px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
   </style>
 </head>
 <body>
-
-  <!-- Heartbeat Text -->
   <h1>💖 Happy Anniversary Mummy-Papa 💖</h1>
-
-  <!-- Letter Section -->
-  <div class="letter" onclick="openLetter()">
-    <div class="letter-content">
-      <h1>💌 Mummy-Papa ke liye pyara message</h1>
-      <p>
-        Aap dono mere liye duniya ke sabse pyaare log ho.<br>
-        Aapke pyaar ne mujhe jeena sikhaya, muskurana sikhaya, aur har mushkil ka saamna karna sikhaya.<br>
-        Main hamesha dua karta hoon ki aap dono hamesha khush raho, saath raho, aur pyaar karte raho. ❤️<br><br>
-        Aapki har muskurahat mere liye ek taqat hai, aur aapka pyaar mere liye sabse khaas hai. <br>
-        Aap dono ka saath mere liye sabse badi dua hai. <br>
-        Main har din shukr guzaar hoon ki aap mere maa-baap ho.<br><br>
-        Aap dono ke saath har moment meri zindagi ki sabse khoobsurat yaad hai.<br>
-        Khuda kare ki yeh pyaar hamesha barkarar rahe aur humesha aise hi saath rahe. ❤️
-      </p>
-      <div class="heart">❤️</div>
-      <p><strong>~ Tumhara pyara bachha</strong></p>
-    </div>
-  </div>
-
-  <script>
-    function openLetter() {
-      // When clicked, the letter content will appear with animation
-      document.querySelector('.letter').classList.add('open');
-    }
-  </script>
-
+  <p>
+    Aap dono mere liye duniya ke sabse pyaare log ho.<br>
+    Aapke pyaar ne mujhe jeena sikhaya, muskurana sikhaya, aur har mushkil ka saamna karna sikhaya.<br>
+    Main hamesha dua karta hoon ki aap dono hamesha khush raho, saath raho, aur pyaar karte raho. ❤️
+  </p>
+  <div class="heart">❤️</div>
+  <p><strong>~ Tumhara pyara bachha</strong></p>
 </body>
 </html>
