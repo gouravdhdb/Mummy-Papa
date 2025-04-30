@@ -10,35 +10,121 @@
       text-align: center;
       color: #333;
       padding: 50px;
+      margin: 0;
     }
+
     h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      color: #ff6f61;
+      font-weight: 700;
+      opacity: 0;
+      animation: fadeIn 2s forwards, heartbeatText 1.5s infinite;
     }
+
+    /* Heartbeat animation for the text */
+    @keyframes heartbeatText {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    /* Fade-in animation for the header */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
     p {
-      font-size: 1.5em;
+      font-size: 1.4em;
       margin: 20px auto;
-      max-width: 600px;
+      max-width: 700px;
+      line-height: 1.6;
+      color: #555;
+      opacity: 0;
+      animation: fadeIn 3s forwards 1s;
     }
+
     .heart {
       color: red;
-      font-size: 3em;
+      font-size: 2em;
       animation: beat 1s infinite;
+      opacity: 0;
+      animation: beat 1s infinite, fadeIn 2s forwards 2s;
     }
+
     @keyframes beat {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.2); }
     }
+
+    /* Styling for the letter */
+    .letter {
+      width: 80%;
+      max-width: 400px;
+      background-color: #f8c3b3;
+      margin: 50px auto;
+      cursor: pointer;
+      padding: 30px;
+      text-align: center;
+      border-radius: 15px;
+      position: relative;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      animation: openLetter 3s forwards 1s;
+    }
+
+    .letter:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .letter-content {
+      opacity: 0;
+      transform: translateY(-50px);
+      animation: openContent 2s forwards 3s;
+    }
+
+    @keyframes openLetter {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes openContent {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Heartbeat Text -->
   <h1>💖 Happy Anniversary Mummy-Papa 💖</h1>
-  <p>
-    Aap dono mere liye duniya ke sabse pyaare log ho.<br>
-    Aapke pyaar ne mujhe jeena sikhaya, muskurana sikhaya, aur har mushkil ka saamna karna sikhaya.<br>
-    Main hamesha dua karta hoon ki aap dono hamesha khush raho, saath raho, aur pyaar karte raho. ❤️
-  </p>
-  <div class="heart">❤️</div>
-  <p><strong>~ Tumhara pyara bachha</strong></p>
+
+  <!-- Letter Section -->
+  <div class="letter">
+    <div class="letter-content">
+      <h1>💌 Mummy-Papa ke liye pyara message</h1>
+      <p>
+        Aap dono mere liye duniya ke sabse pyaare log ho.<br>
+        Aapke pyaar ne mujhe jeena sikhaya, muskurana sikhaya, aur har mushkil ka saamna karna sikhaya.<br>
+        Main hamesha dua karta hoon ki aap dono hamesha khush raho, saath raho, aur pyaar karte raho. ❤️<br><br>
+        Aapki har muskurahat mere liye ek taqat hai, aur aapka pyaar mere liye sabse khaas hai. <br>
+        Aap dono ka saath mere liye sabse badi dua hai. <br>
+        Main har din shukr guzaar hoon ki aap mere maa-baap ho.<br><br>
+        Aap dono ke saath har moment meri zindagi ki sabse khoobsurat yaad hai.<br>
+        Khuda kare ki yeh pyaar hamesha barkarar rahe aur humesha aise hi saath rahe. ❤️
+      </p>
+      <div class="heart">❤️</div>
+      <p><strong>~ Tumhara pyara bachha</strong></p>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to trigger animation when content is clicked (optional)
+    document.querySelector('.letter').addEventListener('click', function() {
+      document.querySelector('.letter-content').classList.add('open');
+    });
+  </script>
+
 </body>
 </html>
